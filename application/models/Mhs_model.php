@@ -7,6 +7,7 @@
 	{
 		function __construct()
 		{
+			parent::__construct();
 		}
 		
 		function add_mhs_($params)

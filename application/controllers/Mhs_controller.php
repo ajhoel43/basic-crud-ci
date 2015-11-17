@@ -1,11 +1,11 @@
 <?php
 
 /**
-* 
+*
 */
 class Mhs_controller extends CI_Controller
 {
-	
+
 	function __construct()
 	{
 		parent::__construct();
@@ -33,7 +33,7 @@ class Mhs_controller extends CI_Controller
 			$this->form_validation->set_rules('Nama', 'Nama', 'required');
 
 			if ($this->form_validation->run() === FALSE) {
-				$this->load->view('news/gagal');	
+				$this->load->view('news/gagal');
 			} else {
 				$this->mhs_model->add_mhs_($this->input->post());
 				$this->load->view('news/success');
@@ -53,7 +53,7 @@ class Mhs_controller extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-	function edit_mhs($nim = null) 
+	function edit_mhs($nim = null)
 	{
 		$save = $this->input->post('update');
 
@@ -63,14 +63,14 @@ class Mhs_controller extends CI_Controller
 			if ($upd) {
 				$this->load->view('news/success');
 				redirect('mhs_controller/form_add_mhs');
-			} else 
+			} else
 				echo "Gagal input data";
 		}
 
 		$this->form_edit_mhs($nim);
 	}
 
-	function delete_mhs($nim) 
+	function delete_mhs($nim)
 	{
 		$this->mhs_model->delete_mhs($nim);
 		redirect('mhs_controller/form_add_mhs');
