@@ -10,9 +10,6 @@ class Mhs_controller extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('mhs_model');
-		$this->load->helper('url_helper');
-		$this->load->helper('form');
-		$this->load->library('form_validation');
 	}
 
 	public function form_add_mhs()

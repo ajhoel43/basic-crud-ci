@@ -7,7 +7,6 @@
 	{
 		function __construct()
 		{
-			$this->load->database();
 		}
 		
 		function add_mhs_($params)
