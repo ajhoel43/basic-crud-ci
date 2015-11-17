@@ -33,10 +33,10 @@ class Mhs_controller extends CI_Controller
 			$this->form_validation->set_rules('Nama', 'Nama', 'required');
 
 			if ($this->form_validation->run() === FALSE) {
-				$this->load->view('news/gagal');
+				$this->load->view('pages/gagal');
 			} else {
 				$this->mhs_model->add_mhs_($this->input->post());
-				$this->load->view('news/success');
+				$this->load->view('pages/success');
 			}
 		}
 
@@ -61,7 +61,7 @@ class Mhs_controller extends CI_Controller
 			$upd = $this->mhs_model->add_mhs_($this->input->post());
 
 			if ($upd) {
-				$this->load->view('news/success');
+				$this->load->view('pages/success');
 				redirect('mhs_controller/form_add_mhs');
 			} else
 				echo "Gagal input data";
