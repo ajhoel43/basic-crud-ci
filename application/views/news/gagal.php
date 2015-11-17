@@ -1,1 +1,0 @@
-Gagal input data
